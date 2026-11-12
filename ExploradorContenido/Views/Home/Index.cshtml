@@ -1,0 +1,97 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-6 fw-bold">Explorador de contenido aleatorio</h1>
+    <p class="text-muted mb-0">
+        Cada tarjeta consulta su propia API. Presiona un botón para actualizar solo esa sección.
+    </p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+    <!-- 1. Citas (DummyJSON) -->
+    <div class="col">
+        <section class="card h-100 shadow-sm tarjeta" id="seccion-cita" aria-labelledby="titulo-cita">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="h5 mb-0" id="titulo-cita">Citas y autores</h2>
+                <span class="badge text-bg-light">DummyJSON</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="estado" data-estado aria-live="polite"></div>
+                <figure class="contenido mb-0" data-contenido hidden>
+                    <blockquote class="blockquote mb-2">
+                        <p id="texto-cita"></p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mb-0" id="autor-cita"></figcaption>
+                </figure>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-primary w-100" id="boton-cita">Obtener otra cita</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. Perros (Dog CEO) -->
+    <div class="col">
+        <section class="card h-100 shadow-sm tarjeta" id="seccion-perro" aria-labelledby="titulo-perro">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="h5 mb-0" id="titulo-perro">Imágenes de perros</h2>
+                <span class="badge text-bg-light">Dog CEO</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="estado" data-estado aria-live="polite"></div>
+                <div class="contenido marco-imagen" data-contenido hidden>
+                    <img id="imagen-perro" class="imagen-uniforme" alt="Foto aleatoria de un perro" />
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-primary w-100" id="boton-perro">Mostrar otro perro</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- 3. Gatos (CATAAS) -->
+    <div class="col">
+        <section class="card h-100 shadow-sm tarjeta" id="seccion-gato" aria-labelledby="titulo-gato">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="h5 mb-0" id="titulo-gato">Imágenes de gatos</h2>
+                <span class="badge text-bg-light">CATAAS</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="estado" data-estado aria-live="polite"></div>
+                <div class="contenido marco-imagen" data-contenido hidden>
+                    <img id="imagen-gato" class="imagen-uniforme" alt="Foto aleatoria de un gato" />
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-primary w-100" id="boton-gato">Mostrar otro gato</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- 4. Datos curiosos (Useless Facts) -->
+    <div class="col">
+        <section class="card h-100 shadow-sm tarjeta" id="seccion-dato" aria-labelledby="titulo-dato">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="h5 mb-0" id="titulo-dato">Datos curiosos</h2>
+                <span class="badge text-bg-light">Useless Facts</span>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="estado" data-estado aria-live="polite"></div>
+                <div class="contenido" data-contenido hidden>
+                    <p class="fs-5 mb-0" id="texto-dato"></p>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+                <button type="button" class="btn btn-primary w-100" id="boton-dato">Mostrar otro dato</button>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="~/js/explorador.js" asp-append-version="true"></script>
+}
